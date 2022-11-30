@@ -12,6 +12,7 @@ namespace RegexProblem
         const string firstName = "^[A-Z]{1}[a-zA-Z]{2,}$";
         const string lastName = "^[A-Z]{1}[a-zA-Z]{2,}$";
         const string emailId = "^[a-zA-Z]+[._-]{0,1}[a-z]+[@][a-zA-Z]+[.][a-z]{2,3}([.][a-z]{2}){0,1}$";
+        const string mobNumber = "^[+]91[ ]{1}[5-9]{1}[0-9]{9}$";
         public void ValidateFirstName(string input)
         {
             if (Regex.IsMatch(input,firstName))
@@ -32,6 +33,13 @@ namespace RegexProblem
                 Console.WriteLine("Entered Email is " + input);
             else
                 Console.WriteLine("Entered Email is in Invalid format.");
+        }
+        public void MobNumber(string input)
+        {
+            if (Regex.IsMatch(input, mobNumber))
+                Console.WriteLine("Entered Mobile Number is " + input);
+            else
+                Console.WriteLine("Invalid mobile number try again.");
         }
     }
 }

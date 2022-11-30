@@ -11,7 +11,7 @@
             {
                 Console.WriteLine("********************************************");
                 Console.WriteLine("Select option you want to enter.");
-                Console.WriteLine(" 1.First Name\n 2.Last Name\n 3.Email ID");
+                Console.WriteLine(" 1.First Name\n 2.Last Name\n 3.Email ID\n 4.Mobile Number");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -29,6 +29,11 @@
                         Console.WriteLine("Enter valid Email");
                         string emaiId = Console.ReadLine();
                         name.EmailID(emaiId);
+                        break;
+                    case 4:
+                        Console.WriteLine("Enter Mobile Number");
+                        string mobNumber = Convert.ToString(Console.ReadLine());
+                        name.MobNumber(mobNumber);
                         break;
 
                 }
