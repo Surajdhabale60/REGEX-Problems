@@ -13,6 +13,7 @@ namespace RegexProblem
         const string lastName = "^[A-Z]{1}[a-zA-Z]{2,}$";
         const string emailId = "^[a-zA-Z]+[._-]{0,1}[a-z]+[@][a-zA-Z]+[.][a-z]{2,3}([.][a-z]{2}){0,1}$";
         const string mobNumber = "^[+]91[ ]{1}[5-9]{1}[0-9]{9}$";
+        const string password = "^(?=.*[!@#$%_])(?=.*[0-9])(?=.*[A-Z])[A-Za-z0-9!@#_$%]{8,}$";
         public void ValidateFirstName(string input)
         {
             if (Regex.IsMatch(input,firstName))
@@ -40,6 +41,13 @@ namespace RegexProblem
                 Console.WriteLine("Entered Mobile Number is " + input);
             else
                 Console.WriteLine("Invalid mobile number try again.");
+        }
+        public void Password(string input)
+        {
+            if (Regex.IsMatch(input,password))
+                Console.WriteLine("Verify your Password :" + input);
+            else
+                Console.WriteLine("Entered password is invalid");
         }
     }
 }
