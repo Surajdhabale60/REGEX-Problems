@@ -9,11 +9,13 @@ namespace RegexProblem
 {
     public class UserFirstName
     {
+        string[] emailsData;
         const string firstName = "^[A-Z]{1}[a-zA-Z]{2,}$";
         const string lastName = "^[A-Z]{1}[a-zA-Z]{2,}$";
         const string emailId = "^[a-zA-Z]+[._-]{0,1}[a-z]+[@][a-zA-Z]+[.][a-z]{2,3}([.][a-z]{2}){0,1}$";
         const string mobNumber = "^91[ ]{1}[5-9]{1}[0-9]{9}$";
         const string password = "^(?=.*[!@#$%_])(?=.*[0-9])(?=.*[A-Z])[A-Za-z0-9!@#_$%]{8,}$";
+        const string emailsCheck = "^[a-zA-Z]+[.+_-]{0,1}[a-z0-9]+[@][a-zA-Z0-9]+[.][a-z]{2,3}([.][a-z]{2,3}){0,1}$";
         public void ValidateFirstName(string input)
         {
             if (Regex.IsMatch(input,firstName))
@@ -49,6 +51,21 @@ namespace RegexProblem
             else
                 Console.WriteLine("Entered password is invalid");
         }
-
+        public void ReadEmailsData(string filepath)
+        {
+            var email = File.ReadAllText(filepath);
+            emailsData = email.Split(",");
+            EmailData(emailsData);
+        }
+        public void EmailData(string[] input)
+        {
+            foreach (var email in input)
+            {
+                if (Regex.IsMatch(email, emailsCheck))
+                    Console.WriteLine("{0} as Email Id is valid", email);
+                else
+                    Console.WriteLine("{0} as Email Id is invalid ", email);
+            }
+        }
     }
 }

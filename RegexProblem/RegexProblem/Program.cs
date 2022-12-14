@@ -11,7 +11,7 @@
             {
                 Console.WriteLine("********************************************");
                 Console.WriteLine("Select option you want to enter.");
-                Console.WriteLine(" 1.First Name\n 2.Last Name\n 3.Email ID\n 4.Mobile Number\n 5.Password");
+                Console.WriteLine(" 1.First Name\n 2.Last Name\n 3.Email ID\n 4.Mobile Number\n 5.Password\n 6.Validate Emails");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -40,7 +40,10 @@
                         string password = Convert.ToString(Console.ReadLine());
                         name.Password(password);
                         break;
-
+                    case 6:
+                        string filepath = @"C:\Users\suraj\source\repos\217 .Net\REGEX-User-Registration-Problems\RegexProblem\RegexProblem\Email.txt";
+                        name.ReadEmailsData(filepath);
+                        break;
                 }
             }
         }
