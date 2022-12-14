@@ -56,7 +56,7 @@
                         name.ReadEmailsDataUsingLambda(filepath);
                         break;
                     case 7:
-                        name.CallingAllEmailUsingLambda("Suraj");
+                        name.CallingAllEmailUsingLambda("Name");
                         Console.WriteLine("Enter Below Data");
                         break;
                 }
